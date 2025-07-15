@@ -172,8 +172,8 @@ function PlayerData:OnPlayerRemoving(player : Player)
 	end
 end
 
-Players.PlayerAdded:Connect(function(player : Player)
-	PlayerData:OnPlayerAdded(player)
+Players.PlayerRemoving:Connect(function(player : Player)
+	PlayerData:OnPlayerRemoving(player)
 end)
 
 for _, player in Players:GetPlayers() do
@@ -182,8 +182,8 @@ for _, player in Players:GetPlayers() do
 	end)
 end
 
-Players.PlayerRemoving:Connect(function(player : Player)
-	PlayerData:OnPlayerRemoving(player)
+Players.PlayerAdded:Connect(function(player : Player)
+	PlayerData:OnPlayerAdded(player)
 end)
 
 return PlayerData
