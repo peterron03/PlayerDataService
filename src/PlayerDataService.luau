@@ -132,7 +132,7 @@ function PlayerData:GetValue(player : Player, valueName : string) : any?
 	return self.Profiles[player] and self.Profiles[player].Data and self.Profiles[player].Data[valueName]
 end
 
-function PlayerData:Load(player)
+function PlayerData:Load(player : Player)
 	local profile = self.PlayerStore:StartSessionAsync(`{player.UserId}`, {
 		Cancel = function()
 			return player.Parent ~= Players
